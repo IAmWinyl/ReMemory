@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		14138A402A00BCB700863D2E /* ReMemoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14138A3F2A00BCB700863D2E /* ReMemoryApp.swift */; };
-		14138A422A00BCB700863D2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14138A412A00BCB700863D2E /* ContentView.swift */; };
 		14138A442A00BCB800863D2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14138A432A00BCB800863D2E /* Assets.xcassets */; };
 		14138A472A00BCB800863D2E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14138A462A00BCB800863D2E /* Preview Assets.xcassets */; };
 		14138A512A00BCB800863D2E /* ReMemoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14138A502A00BCB800863D2E /* ReMemoryTests.swift */; };
 		14138A5B2A00BCB800863D2E /* ReMemoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14138A5A2A00BCB800863D2E /* ReMemoryUITests.swift */; };
 		14138A5D2A00BCB800863D2E /* ReMemoryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14138A5C2A00BCB800863D2E /* ReMemoryUITestsLaunchTests.swift */; };
+		14138A6A2A00BD1100863D2E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14138A692A00BD1100863D2E /* HomeView.swift */; };
+		14138A6E2A00BD5400863D2E /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14138A6D2A00BD5400863D2E /* Memory.swift */; };
+		14138A702A00BDEF00863D2E /* MemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14138A6F2A00BDEF00863D2E /* MemType.swift */; };
+		14138A722A00BEB500863D2E /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14138A712A00BEB500863D2E /* MemoryView.swift */; };
+		14138A742A00D12F00863D2E /* NewMemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14138A732A00D12F00863D2E /* NewMemoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,6 @@
 /* Begin PBXFileReference section */
 		14138A3C2A00BCB700863D2E /* ReMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14138A3F2A00BCB700863D2E /* ReMemoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReMemoryApp.swift; sourceTree = "<group>"; };
-		14138A412A00BCB700863D2E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		14138A432A00BCB800863D2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14138A462A00BCB800863D2E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		14138A4C2A00BCB800863D2E /* ReMemoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReMemoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +47,11 @@
 		14138A562A00BCB800863D2E /* ReMemoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReMemoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14138A5A2A00BCB800863D2E /* ReMemoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReMemoryUITests.swift; sourceTree = "<group>"; };
 		14138A5C2A00BCB800863D2E /* ReMemoryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReMemoryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		14138A692A00BD1100863D2E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		14138A6D2A00BD5400863D2E /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
+		14138A6F2A00BDEF00863D2E /* MemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemType.swift; sourceTree = "<group>"; };
+		14138A712A00BEB500863D2E /* MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryView.swift; sourceTree = "<group>"; };
+		14138A732A00D12F00863D2E /* NewMemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMemoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +102,9 @@
 		14138A3E2A00BCB700863D2E /* ReMemory */ = {
 			isa = PBXGroup;
 			children = (
+				14138A6C2A00BD4200863D2E /* Models */,
+				14138A6B2A00BD1C00863D2E /* Views */,
 				14138A3F2A00BCB700863D2E /* ReMemoryApp.swift */,
-				14138A412A00BCB700863D2E /* ContentView.swift */,
 				14138A432A00BCB800863D2E /* Assets.xcassets */,
 				14138A452A00BCB800863D2E /* Preview Content */,
 			);
@@ -125,6 +134,25 @@
 				14138A5C2A00BCB800863D2E /* ReMemoryUITestsLaunchTests.swift */,
 			);
 			path = ReMemoryUITests;
+			sourceTree = "<group>";
+		};
+		14138A6B2A00BD1C00863D2E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				14138A692A00BD1100863D2E /* HomeView.swift */,
+				14138A712A00BEB500863D2E /* MemoryView.swift */,
+				14138A732A00D12F00863D2E /* NewMemoryView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		14138A6C2A00BD4200863D2E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				14138A6D2A00BD5400863D2E /* Memory.swift */,
+				14138A6F2A00BDEF00863D2E /* MemType.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +285,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14138A422A00BCB700863D2E /* ContentView.swift in Sources */,
+				14138A6E2A00BD5400863D2E /* Memory.swift in Sources */,
+				14138A702A00BDEF00863D2E /* MemType.swift in Sources */,
+				14138A722A00BEB500863D2E /* MemoryView.swift in Sources */,
 				14138A402A00BCB700863D2E /* ReMemoryApp.swift in Sources */,
+				14138A742A00D12F00863D2E /* NewMemoryView.swift in Sources */,
+				14138A6A2A00BD1100863D2E /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
