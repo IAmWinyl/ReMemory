@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct HomeView: View {
-    var memories: [Memory] = Memory.sampleMemoryList
+    @Binding var memories: [Memory]
     @State private var isPresentingNewMemory: Bool = false
+    @Environment(\.scenePhase) private var scenePhase
+    let saveAction: () -> Void
     
     var body: some View {
         NavigationStack {
@@ -18,10 +20,10 @@ struct HomeView: View {
                     MemoryView(memory: memory)
                 }
             }
-            .toolbar {
+            .toolbar { 
                 Button(action: {
                     isPresentingNewMemory = true
-                }) {R
+                }) {
                     Image(systemName: "plus")
                 }
             }
@@ -43,11 +45,14 @@ struct HomeView: View {
                     }
             }
         }
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive { saveAction() }
+        }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(memories: .constant(Memory.sampleMemoryList), saveAction: {})
     }
 }

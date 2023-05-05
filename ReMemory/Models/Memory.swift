@@ -13,20 +13,14 @@ struct Memory: Identifiable, Codable {
     var type: MemType
     var contentURL: String
     
-    init(id: UUID = UUID(), date: Date, type: MemType, contentURL: String) {
+    init(id: UUID, date: Date, type: MemType, contentURL: String) {
         self.id = id
         self.date = date
         self.type = type
         self.contentURL = contentURL
     }
-    static private func getDocumentsDirectory() -> URL {
-        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = urls[0]
-        
-        return documentsDirectory
-    }
     func getContentURL() -> String {
-        return Self.getDocumentsDirectory().appendingPathComponent(self.contentURL).absoluteString
+        return Utilities.getDocumentsDirectory().appendingPathComponent(self.contentURL).absoluteString
     }
     
     func loadImage() -> UIImage {
@@ -35,14 +29,26 @@ struct Memory: Identifiable, Codable {
         }
         return image
     }
+    
+    static public func saveImageToDisk(image: UIImage) -> UUID {
+        let uuid = UUID()
+        let url = Utilities.getDocumentsDirectory().appendingPathComponent(uuid.uuidString+".jpg")
+        print("url: ", url)
+        if let data = image.pngData() {
+            do {
+                try data.write(to: url)
+            } catch {
+                print("Unable to write image data to disk")
+            }
+        }
+        return uuid
+    }
+    
 }
 
 extension Memory {
     
     static let sampleMemoryList = [
-        Memory(date:Date(), type:MemType.image, contentURL:"sample.jpg"),
-        Memory(date:Date(), type:MemType.text, contentURL:"sample_txt.txt"),
-        Memory(date:Date(), type:MemType.link, contentURL:"sample_link.txt"),
-        Memory(date:Date(), type:MemType.video, contentURL:"sample.mp4")
+        Memory(id: UUID(), date:Date(), type:MemType.image, contentURL:"image.jpg")
     ]
 }
