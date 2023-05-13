@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MemoryView: View {
-    let memory: Memory
+    @Binding var memory: Memory
     var body: some View {
         VStack {
             HStack {
@@ -27,6 +27,6 @@ struct MemoryView: View {
 
 struct MemoryView_Previews: PreviewProvider {
     static var previews: some View {
-        MemoryView(memory: Memory.sampleMemoryList[0])
+        MemoryView(memory: .constant(Memory.sampleMemoryList[0]))
     }
 }

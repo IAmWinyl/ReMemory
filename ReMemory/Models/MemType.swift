@@ -8,6 +8,7 @@
 import Foundation
 
 enum MemType : String, CaseIterable, Identifiable, Codable {
+    case none
     case video
     case audio
     case image

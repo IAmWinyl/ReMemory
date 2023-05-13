@@ -16,7 +16,7 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(memories) { memory in
+                ForEach($memories) { memory in
                     MemoryView(memory: memory)
                 }
             }
@@ -30,7 +30,7 @@ struct HomeView: View {
         }
         .sheet(isPresented: $isPresentingNewMemory) {
             NavigationStack {
-                NewMemoryView()
+                NewMemoryView(memories: $memories)
                     .toolbar {
                         ToolbarItem(placement:.confirmationAction) {
                             Button("Save") {

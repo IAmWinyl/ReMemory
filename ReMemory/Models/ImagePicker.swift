@@ -10,7 +10,7 @@ import PhotosUI
 
 
 struct ImagePicker: UIViewControllerRepresentable {
-    @Binding var imageUUID: UUID
+    @Binding var newImage: Memory
     
     func makeUIViewController(context: Context) -> PHPickerViewController {
         var config = PHPickerConfiguration()
@@ -23,11 +23,14 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ uiViewController: PHPickerViewController, context: Context) {
-        
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
     }
     
     class Coordinator: NSObject, PHPickerViewControllerDelegate {
-        var parent: ImagePicker
+        let parent: ImagePicker
         
         init(_ parent: ImagePicker) {
             self.parent = parent
@@ -45,14 +48,12 @@ struct ImagePicker: UIViewControllerRepresentable {
             // If image chosen, save it into MediaPicker's media var
             if provider.canLoadObject(ofClass: UIImage.self) {
                 provider.loadObject(ofClass: UIImage.self) { image, _ in
-                    self.parent.imageUUID = Memory.saveImageToDisk(image: (image as? UIImage)!)
+                    self.parent.newImage = Utilities.saveImageToDisk(image: (image as? UIImage)!)
                 }
             }
+            
         }
     }
     
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
 
 }

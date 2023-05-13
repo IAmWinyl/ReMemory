@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct NewImageView: View {
-    @State private var imageUUID: UUID = UUID()
+    @Binding var newMemory: Memory
     
     var body: some View {
-        ImagePicker(imageUUID: $imageUUID)
+        ImagePicker(newImage: $newMemory)
     }
     
 }
 
 struct NewMediaView_Previews: PreviewProvider {
     static var previews: some View {
-        NewImageView()
+        NewImageView(newMemory: .constant(Memory.sampleMemoryList[0]))
     }
 }
