@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @Binding var memories: [Memory]
-    @State private var isPresentingNewMemory: Bool = false
+    @State private var isPresentingNewMemory = false
     @Environment(\.scenePhase) private var scenePhase
     let saveAction: () -> Void
     
@@ -20,12 +20,17 @@ struct HomeView: View {
                     MemoryView(memory: memory)
                 }
             }
-            .toolbar { 
-                Button(action: {
-                    isPresentingNewMemory = true
-                }) {
-                    Image(systemName: "plus")
-                }
+        }
+        .task {
+            if memories.isEmpty {
+                isPresentingNewMemory = true
+            }
+        }
+        .toolbar {
+            Button(action: {
+                isPresentingNewMemory = true
+            }) {
+                Image(systemName: "plus")
             }
         }
         .sheet(isPresented: $isPresentingNewMemory) {

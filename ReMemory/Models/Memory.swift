@@ -33,7 +33,6 @@ class Memory: Identifiable, Codable, Equatable {
     
     func loadImage() -> UIImage {
         guard let image: UIImage = UIImage(contentsOfFile: getContentURL()) else {
-            print(getContentURL())
             return UIImage(systemName: "photo")!
         }
         return image

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Utilities {
+class Utilities {
     
     static public func getDocumentsDirectory() -> URL {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)

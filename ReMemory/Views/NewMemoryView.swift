@@ -37,7 +37,7 @@ struct NewMemoryView: View {
             }
         }
         .onChange(of: newMemory) { newValue in
-            memories.append(newMemory)
+            memories.insert(newMemory, at: 0)
         }
     }
 }
