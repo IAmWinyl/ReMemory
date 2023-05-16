@@ -25,6 +25,7 @@
 		14138A7E2A01857600863D2E /* NewVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14138A7D2A01857600863D2E /* NewVideoView.swift */; };
 		14138A802A04ADFA00863D2E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14138A7F2A04ADFA00863D2E /* Utilities.swift */; };
 		14138A822A04AE6F00863D2E /* MemoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14138A812A04AE6F00863D2E /* MemoryStore.swift */; };
+		142D93EC2A130A2700D7C67A /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142D93EB2A130A2700D7C67A /* Notifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,19 @@
 			remoteInfo = ReMemory;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		142D93DA2A1304C500D7C67A /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		14138A3C2A00BCB700863D2E /* ReMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +80,12 @@
 		14138A7D2A01857600863D2E /* NewVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVideoView.swift; sourceTree = "<group>"; };
 		14138A7F2A04ADFA00863D2E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		14138A812A04AE6F00863D2E /* MemoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStore.swift; sourceTree = "<group>"; };
+		142D93CA2A13048900D7C67A /* ReMemory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReMemory.entitlements; sourceTree = "<group>"; };
+		142D93D12A1304C500D7C67A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		142D93D32A1304C500D7C67A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		142D93E12A1304E500D7C67A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		142D93E32A1304E500D7C67A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		142D93EB2A130A2700D7C67A /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +119,8 @@
 				14138A3E2A00BCB700863D2E /* ReMemory */,
 				14138A4F2A00BCB800863D2E /* ReMemoryTests */,
 				14138A592A00BCB800863D2E /* ReMemoryUITests */,
+				142D93D02A1304C500D7C67A /* ReMemoryNotificationServiceExtension */,
+				142D93E02A1304E500D7C67A /* ReMemoryServiceNotificationExtension */,
 				14138A3D2A00BCB700863D2E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,6 +138,7 @@
 		14138A3E2A00BCB700863D2E /* ReMemory */ = {
 			isa = PBXGroup;
 			children = (
+				142D93CA2A13048900D7C67A /* ReMemory.entitlements */,
 				14138A6C2A00BD4200863D2E /* Models */,
 				14138A6B2A00BD1C00863D2E /* Views */,
 				14138A3F2A00BCB700863D2E /* ReMemoryApp.swift */,
@@ -172,8 +195,27 @@
 				14138A6F2A00BDEF00863D2E /* MemType.swift */,
 				14138A7F2A04ADFA00863D2E /* Utilities.swift */,
 				14138A812A04AE6F00863D2E /* MemoryStore.swift */,
+				142D93EB2A130A2700D7C67A /* Notifications.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		142D93D02A1304C500D7C67A /* ReMemoryNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				142D93D12A1304C500D7C67A /* NotificationService.swift */,
+				142D93D32A1304C500D7C67A /* Info.plist */,
+			);
+			path = ReMemoryNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
+		142D93E02A1304E500D7C67A /* ReMemoryServiceNotificationExtension */ = {
+			isa = PBXGroup;
+			children = (
+				142D93E12A1304E500D7C67A /* NotificationService.swift */,
+				142D93E32A1304E500D7C67A /* Info.plist */,
+			);
+			path = ReMemoryServiceNotificationExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +228,7 @@
 				14138A382A00BCB700863D2E /* Sources */,
 				14138A392A00BCB700863D2E /* Frameworks */,
 				14138A3A2A00BCB700863D2E /* Resources */,
+				142D93DA2A1304C500D7C67A /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -316,6 +359,7 @@
 				14138A802A04ADFA00863D2E /* Utilities.swift in Sources */,
 				14138A762A017CC800863D2E /* ImagePicker.swift in Sources */,
 				14138A402A00BCB700863D2E /* ReMemoryApp.swift in Sources */,
+				142D93EC2A130A2700D7C67A /* Notifications.swift in Sources */,
 				14138A7A2A017FC600863D2E /* NewTextView.swift in Sources */,
 				14138A742A00D12F00863D2E /* NewMemoryView.swift in Sources */,
 				14138A6A2A00BD1100863D2E /* HomeView.swift in Sources */,
@@ -472,11 +516,15 @@
 		14138A612A00BCB800863D2E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ReMemory/ReMemory.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReMemory/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "";
@@ -493,6 +541,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.serraabak.ReMemory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -502,11 +551,15 @@
 		14138A622A00BCB800863D2E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ReMemory/ReMemory.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReMemory/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "";
@@ -523,6 +576,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.serraabak.ReMemory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

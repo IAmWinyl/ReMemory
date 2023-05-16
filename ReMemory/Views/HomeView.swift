@@ -20,17 +20,17 @@ struct HomeView: View {
                     MemoryView(memory: memory)
                 }
             }
+            .toolbar {
+                Button(action: {
+                    isPresentingNewMemory = true
+                }) {
+                    Image(systemName: "plus")
+                }
+            }
         }
         .task {
             if memories.isEmpty {
-                isPresentingNewMemory = true
-            }
-        }
-        .toolbar {
-            Button(action: {
-                isPresentingNewMemory = true
-            }) {
-                Image(systemName: "plus")
+                isPresentingNewMemory = false
             }
         }
         .sheet(isPresented: $isPresentingNewMemory) {

@@ -25,6 +25,8 @@ struct ReMemoryApp: App {
             .task {
                 do {
                     try await store.load()
+                    try await Notifications.getPermissions()
+                    try await Notifications.setNotification(memories: store.memories)
                 } catch {
                     print(error.localizedDescription)
                 }
